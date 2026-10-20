@@ -1,0 +1,19 @@
+workflows:
+  ios-demo:
+    name: Universal ESP Overlay
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+
+    environment:
+      xcode: latest
+
+    scripts:
+      - name: Build iOS app
+        script: |
+          xcodebuild -version
+          echo "Repository files:"
+          ls -la
+          echo "Build configuration created successfully."
+          
+    artifacts:
+      - "*.ipa"
